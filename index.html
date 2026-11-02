@@ -259,12 +259,12 @@ html[lang="ar"] .product p{line-height:1.8}
 .why-list p{margin-top:6px;color:var(--muted)}
 
 /* Partners */
-.partners{margin-top:clamp(56px,7vw,88px)}
-.partners-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 32px;margin-bottom:20px}
-.partners-head h3{font-size:1.3rem;letter-spacing:-0.012em}
-.partners-head p{color:var(--muted);max-width:52ch}
-.partner-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.partner-list li{display:grid;place-items:center;min-height:88px;padding:14px 12px;background:#fff;border:1px solid var(--line);border-radius:14px;text-align:center;font:600 16px/1.25 "Sora", sans-serif;letter-spacing:-0.01em;color:var(--ink)}
+.partners-sec{padding-bottom:clamp(56px,7vw,96px)}
+.partner-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.partner{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:118px;padding:24px 26px;background:var(--mist);border:1px solid var(--line);border-radius:18px}
+.partner-name{font:600 1.45rem/1.15 "Sora", sans-serif;letter-spacing:-0.02em;color:var(--ink)}
+.partner-type{font-size:15px;line-height:1.4;color:var(--muted)}
+[dir="rtl"] .partner-name{text-align:right}
 a.fact-value{text-decoration:none;font-variant-numeric:tabular-nums}
 a.fact-value:hover{color:var(--blue)}
 
@@ -366,7 +366,7 @@ a.c-value:hover{color:var(--blue)}
   .fact,.fact:first-child{padding:20px 0;border-inline-start:0;border-top:1px solid var(--line)}
   .fact:first-child{border-top:0}
   .steps{grid-template-columns:1fr;gap:36px}
-  .partner-list{grid-template-columns:repeat(3,1fr)}
+  .partner-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:1/-1}
   .topbar-item.hours{display:none}
@@ -390,7 +390,8 @@ a.c-value:hover{color:var(--blue)}
 }
 @media (max-width:420px){
   .picker-options{grid-template-columns:repeat(2,1fr)}
-  .partner-list{grid-template-columns:repeat(2,1fr)}
+  .partner-grid{grid-template-columns:1fr}
+  .partner{min-height:0;padding:18px 20px}
   .brand-sub{display:none}
   .footer-grid{grid-template-columns:1fr}
 }
@@ -453,7 +454,7 @@ a.c-value:hover{color:var(--blue)}
     <nav class="nav" data-i18n-aria="nav.aria" aria-label="Navigation principale">
       <a href="#a-propos" data-i18n="nav.about">À propos</a>
       <a href="#assurances" data-i18n="nav.products">Nos assurances</a>
-      <a href="#sinistre" data-i18n="nav.claim">Sinistre</a>
+      <a href="#partenaires" data-i18n="nav.partners">Partenaires</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="header-cta">
@@ -467,6 +468,7 @@ a.c-value:hover{color:var(--blue)}
   <div class="mobile-menu" id="mobile-menu" hidden>
     <a class="m-link" href="#a-propos" data-i18n="nav.about">À propos</a>
     <a class="m-link" href="#assurances" data-i18n="nav.products">Nos assurances</a>
+    <a class="m-link" href="#partenaires" data-i18n="nav.partners">Partenaires</a>
     <a class="m-link" href="#courtier" data-i18n="nav.why">Pourquoi un courtier</a>
     <a class="m-link" href="#sinistre" data-i18n="nav.claim">Sinistre</a>
     <a class="m-link" href="#contact" data-i18n="nav.contact">Contact</a>
@@ -482,7 +484,7 @@ a.c-value:hover{color:var(--blue)}
     <div class="wrap hero-grid">
       <div>
         <h1 id="hero-title" data-i18n="hero.title"><span>Votre assurance</span> <span>commence par</span> <span>le bon conseil.</span></h1>
-        <p class="hero-lead" data-i18n="hero.lead">Bienvenue chez All In One Assurance, cabinet de courtage installé boulevard d'Anfa, à Casablanca. Nous comparons les offres des compagnies, vous expliquons chaque garantie et restons à vos côtés en cas de sinistre.</p>
+        <p class="hero-lead" data-i18n="hero.lead">Bienvenue chez All In One Assurance, cabinet de courtage installé boulevard d'Anfa, à Casablanca. Nous comparons les offres de nos compagnies partenaires, dont Sanlam, Allianz et Wafa Assurance, vous expliquons chaque garantie et restons à vos côtés en cas de sinistre.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#devis" data-i18n="cta.quote">Demander un devis</a>
           <a class="btn btn-outline-light" href="https://wa.me/212661311149" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta.wa">Écrire sur WhatsApp</span></a>
@@ -549,6 +551,23 @@ a.c-value:hover{color:var(--blue)}
         <li><span class="ring"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><div><strong data-i18n="pr1.t">Des garanties adaptées à vos besoins</strong><span data-i18n="pr1.d">Nous partons de votre situation, pas d'un contrat type.</span></div></li>
         <li><span class="ring"><svg class="i" aria-hidden="true"><use href="#i-talk"/></svg></span><div><strong data-i18n="pr2.t">Un accompagnement personnalisé</strong><span data-i18n="pr2.d">Un conseiller qui connaît votre dossier et répond à vos questions.</span></div></li>
         <li><span class="ring"><svg class="i" aria-hidden="true"><use href="#i-doc"/></svg></span><div><strong data-i18n="pr3.t">Une gestion simplifiée en cas de sinistre</strong><span data-i18n="pr3.d">Nous déclarons et suivons votre dossier avec la compagnie.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section partners-sec" id="partenaires" aria-labelledby="partners-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="partners-title" data-i18n="partners.title">Nos compagnies partenaires</h2>
+        <p data-i18n="partners.text">En tant que courtier, nous comparons pour vous les offres de ces compagnies et vous proposons celle qui correspond le mieux à vos besoins.</p>
+      </div>
+      <ul class="partner-grid">
+          <li class="partner"><span class="partner-name" dir="ltr">Sanlam</span><span class="partner-type" data-i18n="pt.ins">Compagnie d'assurance</span></li>
+          <li class="partner"><span class="partner-name" dir="ltr">Allianz</span><span class="partner-type" data-i18n="pt.ins">Compagnie d'assurance</span></li>
+          <li class="partner"><span class="partner-name" dir="ltr">Wafa Assurance</span><span class="partner-type" data-i18n="pt.ins">Compagnie d'assurance</span></li>
+          <li class="partner"><span class="partner-name" dir="ltr">MCMA</span><span class="partner-type" data-i18n="pt.mcma">Mutuelle Centrale Marocaine d'Assurances</span></li>
+          <li class="partner"><span class="partner-name" dir="ltr">MATU</span><span class="partner-type" data-i18n="pt.matu">Mutuelle d'Assurances des Transporteurs Unis</span></li>
+          <li class="partner"><span class="partner-name" dir="ltr">Maroc Assistance Internationale</span><span class="partner-type" data-i18n="pt.mai">Société d'assistance</span></li>
       </ul>
     </div>
   </section>
@@ -622,20 +641,6 @@ a.c-value:hover{color:var(--blue)}
         <li><svg class="i" aria-hidden="true"><use href="#i-scale"/></svg><div><h3 data-i18n="w1.t">Nous comparons plusieurs compagnies</h3><p data-i18n="w1.d">Vous obtenez des garanties et un tarif négociés, sans faire le tour des agences.</p></div></li>
         <li><svg class="i" aria-hidden="true"><use href="#i-talk"/></svg><div><h3 data-i18n="w2.t">Un seul interlocuteur pour tout</h3><p data-i18n="w2.d">Voiture, logement, santé, entreprise&nbsp;: tous vos contrats suivis par la même équipe.</p></div></li>
         <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><div><h3 data-i18n="w3.t">À vos côtés en cas de sinistre</h3><p data-i18n="w3.d">Nous montons votre dossier et suivons l'indemnisation jusqu'au bout avec la compagnie.</p></div></li>
-      </ul>
-    </div>
-    <div class="wrap partners" id="partenaires">
-      <div class="partners-head">
-        <h3 data-i18n="partners.title">Nos partenaires</h3>
-        <p data-i18n="partners.text">Nous travaillons avec des compagnies d'assurance et d'assistance reconnues au Maroc.</p>
-      </div>
-      <ul class="partner-list">
-        <li>Sanlam</li>
-        <li>Allianz</li>
-        <li>Wafa Assurance</li>
-        <li>MCMA</li>
-        <li>MATU</li>
-        <li>Maroc Assistance Internationale</li>
       </ul>
     </div>
   </section>
@@ -848,7 +853,7 @@ a.c-value:hover{color:var(--blue)}
       'cta.send.mail':'Send by email',
       'cta.call':'Call',
       'hero.title':'<span>Good insurance</span> <span>starts with</span> <span>the right advice.</span>',
-      'hero.lead':'Welcome to All In One Assurance, an insurance brokerage on Boulevard d’Anfa in Casablanca. We compare offers from insurance companies, explain every guarantee and stand by you whenever you need to make a claim.',
+      'hero.lead':'Welcome to All In One Assurance, an insurance brokerage on Boulevard d’Anfa in Casablanca. We compare offers from our partner companies, including Sanlam, Allianz and Wafa Assurance, explain every guarantee and stand by you whenever you need to make a claim.',
       'hero.addr':'201 Boulevard d’Anfa, 1st floor, No. 3, Racine, Casablanca',
       'picker.title':'What would you like to insure?',
       'picker.aria':'Insurance type',
@@ -882,7 +887,7 @@ a.c-value:hover{color:var(--blue)}
       'p.at':'Workplace accidents','p.at.d':'Mandatory cover for every employer, adjusted to your activity and headcount.',
       'p.transport':'Goods in transit','p.transport.d':'Your goods covered for import, export and on Moroccan roads.',
       'p.pro_autre':'Other business need','p.autre':'Other request',
-      'partners.title':'Our partners','partners.text':'We work with well-established insurance and assistance companies in Morocco.',
+      'partners.title':'Our partner companies','partners.text':'As a broker, we compare offers from these companies for you and recommend the one that best fits your needs.','nav.partners':'Partners','pt.ins':'Insurance company','pt.mcma':'Mutuelle Centrale Marocaine d\u2019Assurances (mutual insurer)','pt.matu':'Mutuelle d\u2019Assurances des Transporteurs Unis (mutual insurer)','pt.mai':'Assistance company',
       'why.title':'An insurer sells you its own contracts. A broker chooses the right one for you.',
       'why.intro':'As a broker, we work for you, not for an insurance company. No more stressful paperwork! You can count on us to bring you the best products from several companies, at attractive rates and with quality customer service.',
       'w1.t':'We compare several insurers','w1.d':'You get negotiated cover and prices without going from agency to agency.',
@@ -939,7 +944,7 @@ a.c-value:hover{color:var(--blue)}
       'cta.send.mail':'أرسل عبر البريد الإلكتروني',
       'cta.call':'اتصل',
       'hero.title':'<span>تأمينك يبدأ</span> <span>بالنصيحة</span> <span>الصحيحة.</span>',
-      'hero.lead':'مرحبًا بكم في All In One Assurance، مكتب وساطة في التأمين بشارع أنفا في الدار البيضاء. نقارن عروض شركات التأمين، ونشرح لكم كل ضمان، ونبقى إلى جانبكم عند وقوع أي حادث.',
+      'hero.lead':'مرحبًا بكم في All In One Assurance، مكتب وساطة في التأمين بشارع أنفا في الدار البيضاء. نقارن عروض شركائنا من شركات التأمين، ومنها سانلام وأليانز ووفا للتأمين، ونشرح لكم كل ضمان، ونبقى إلى جانبكم عند وقوع أي حادث.',
       'hero.addr':'201، شارع أنفا، الطابق الأول، رقم 3، حي راسين، الدار البيضاء',
       'picker.title':'ماذا تريد أن تؤمّن؟',
       'picker.aria':'نوع التأمين',
@@ -973,7 +978,7 @@ a.c-value:hover{color:var(--blue)}
       'p.at':'حوادث الشغل','p.at.d':'التأمين الإجباري لكل مشغّل، ملائم لنشاطك وعدد أجرائك.',
       'p.transport':'نقل البضائع','p.transport.d':'تغطية بضائعك عند الاستيراد والتصدير وعلى طرق المغرب.',
       'p.pro_autre':'حاجة مهنية أخرى','p.autre':'طلب آخر',
-      'partners.title':'شركاؤنا','partners.text':'نتعامل مع شركات تأمين ومساعدة معروفة في المغرب.',
+      'partners.title':'الشركات الشريكة','partners.text':'بصفتنا وسيطًا، نقارن لك عروض هذه الشركات ونقترح عليك الأنسب لاحتياجاتك.','nav.partners':'شركاؤنا','pt.ins':'شركة تأمين','pt.mcma':'التعاضدية المركزية المغربية للتأمين','pt.matu':'تعاضدية التأمين للناقلين المتحدين','pt.mai':'شركة المساعدة',
       'why.title':'شركة التأمين تبيعك عقودها. الوسيط يختار لك الأنسب.',
       'why.intro':'بصفتنا وسيطًا، نعمل لصالحك وليس لصالح شركة تأمين. وداعًا للإجراءات المرهقة! يمكنك الاعتماد علينا لنقدّم لك أفضل منتجات عدة شركات، بأسعار مغرية وخدمة زبناء ذات جودة.',
       'w1.t':'نقارن بين عدة شركات','w1.d':'تحصل على ضمانات وأسعار متفاوض عليها دون التنقل بين الوكالات.',
