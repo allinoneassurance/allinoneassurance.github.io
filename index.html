@@ -61,7 +61,7 @@
     "addressLocality": "Casablanca",
     "addressCountry": "MA"
   },
-  "telephone": ["+212520656668", "+212623833612", "+212661311149"],
+  "telephone": ["+212520656668", "+212661311149"],
   "email": "allinoneassurance@gmail.com",
   "sameAs": ["https://www.instagram.com/allinoneassurance/"],
   "areaServed": "Casablanca",
@@ -257,6 +257,16 @@ html[lang="ar"] .product p{line-height:1.8}
 .why-list h3{font-size:1.16rem;letter-spacing:-0.01em}
 .why-list p{margin-top:6px;color:var(--muted)}
 
+/* Partners */
+.partners{margin-top:clamp(56px,7vw,88px)}
+.partners-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 32px;margin-bottom:20px}
+.partners-head h3{font-size:1.3rem;letter-spacing:-0.012em}
+.partners-head p{color:var(--muted);max-width:52ch}
+.partner-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.partner-list li{display:grid;place-items:center;min-height:88px;padding:14px 12px;background:#fff;border:1px solid var(--line);border-radius:14px;text-align:center;font:600 16px/1.25 "Sora", sans-serif;letter-spacing:-0.01em;color:var(--ink)}
+a.fact-value{text-decoration:none;font-variant-numeric:tabular-nums}
+a.fact-value:hover{color:var(--blue)}
+
 /* Steps (a real sequence) */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);counter-reset:step}
 .step{padding-top:26px;border-top:2px solid var(--ink)}
@@ -355,6 +365,7 @@ a.c-value:hover{color:var(--blue)}
   .fact,.fact:first-child{padding:20px 0;border-inline-start:0;border-top:1px solid var(--line)}
   .fact:first-child{border-top:0}
   .steps{grid-template-columns:1fr;gap:36px}
+  .partner-list{grid-template-columns:repeat(3,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:1/-1}
   .topbar-item.hours{display:none}
@@ -378,6 +389,7 @@ a.c-value:hover{color:var(--blue)}
 }
 @media (max-width:420px){
   .picker-options{grid-template-columns:repeat(2,1fr)}
+  .partner-list{grid-template-columns:repeat(2,1fr)}
   .brand-sub{display:none}
   .footer-grid{grid-template-columns:1fr}
 }
@@ -558,7 +570,7 @@ a.c-value:hover{color:var(--blue)}
       <div class="facts">
         <div class="fact"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><div><span class="fact-label" data-i18n="fact.agency">Agence</span><span class="fact-value" data-i18n="fact.agency.v">201, boulevard d'Anfa, 1<sup>er</sup> étage, Casablanca</span></div></div>
         <div class="fact"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><div><span class="fact-label" data-i18n="fact.hours">Horaires</span><span class="fact-value" data-i18n="fact.hours.v">Lundi au vendredi, 9&nbsp;h à 18&nbsp;h&nbsp;30<br>Samedi, 9&nbsp;h à 13&nbsp;h</span></div></div>
-        <div class="fact"><svg class="i" aria-hidden="true"><use href="#i-building"/></svg><div><span class="fact-label" data-i18n="fact.partner">Compagnie partenaire</span><span class="fact-value" data-i18n="fact.partner.v">Wafa Assurance</span></div></div>
+        <div class="fact"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><div><span class="fact-label" data-i18n="c.wa">WhatsApp</span><a class="fact-value" href="https://wa.me/212661311149" target="_blank" rel="noopener"><span class="ltr">06 61 31 11 49</span></a></div></div>
       </div>
     </div>
   </section>
@@ -611,6 +623,20 @@ a.c-value:hover{color:var(--blue)}
         <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><div><h3 data-i18n="w3.t">À vos côtés en cas de sinistre</h3><p data-i18n="w3.d">Nous montons votre dossier et suivons l'indemnisation jusqu'au bout avec la compagnie.</p></div></li>
       </ul>
     </div>
+    <div class="wrap partners" id="partenaires">
+      <div class="partners-head">
+        <h3 data-i18n="partners.title">Nos partenaires</h3>
+        <p data-i18n="partners.text">Nous travaillons avec des compagnies d'assurance et d'assistance reconnues au Maroc.</p>
+      </div>
+      <ul class="partner-list">
+        <li>Sanlam</li>
+        <li>Allianz</li>
+        <li>Wafa Assurance</li>
+        <li>MCMA</li>
+        <li>MATU</li>
+        <li>Maroc Assistance Internationale</li>
+      </ul>
+    </div>
   </section>
 
   <section class="section" aria-labelledby="steps-title">
@@ -634,7 +660,7 @@ a.c-value:hover{color:var(--blue)}
           <h2 id="claim-title" data-i18n="claim.title">Un sinistre&nbsp;? Prévenez-nous rapidement.</h2>
           <p class="claim-text" data-i18n="claim.text">Nous vous guidons dès le premier appel et nous occupons de la déclaration auprès de votre compagnie.</p>
           <div class="claim-actions">
-            <a class="btn btn-primary" href="tel:+212623833612"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span class="ltr">06 23 83 36 12</span></a>
+            <a class="btn btn-primary" href="tel:+212520656668"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span class="ltr">05 20 65 66 68</span></a>
             <a class="btn btn-outline-light" id="claim-wa" href="https://wa.me/212661311149?text=Bonjour%2C%20je%20souhaite%20d%C3%A9clarer%20un%20sinistre." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta.send.wa">Envoyer sur WhatsApp</span></a>
           </div>
         </div>
@@ -703,7 +729,7 @@ a.c-value:hover{color:var(--blue)}
         <h2 id="visit-title" data-i18n="visit.title">Nous rendre visite</h2>
         <ul class="contact-list">
           <li><span class="ci"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span><div><span class="c-label" data-i18n="c.addr">Adresse</span><span class="c-value" data-i18n="c.addr.v">201, boulevard d'Anfa<br>1<sup>er</sup> étage, n° 3, quartier Racine<br>Casablanca</span></div></li>
-          <li><span class="ci"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span><div><span class="c-label" data-i18n="f.phone">Téléphone</span><a class="c-value" href="tel:+212520656668"><span class="ltr">05 20 65 66 68</span> <small data-i18n="c.fixe">fixe</small></a><a class="c-value" href="tel:+212623833612"><span class="ltr">06 23 83 36 12</span> <small data-i18n="c.mobile">mobile</small></a></div></li>
+          <li><span class="ci"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span><div><span class="c-label" data-i18n="f.phone">Téléphone</span><a class="c-value" href="tel:+212520656668"><span class="ltr">05 20 65 66 68</span></a></div></li>
           <li><span class="ci"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><span class="c-label" data-i18n="c.wa">WhatsApp</span><a class="c-value" href="https://wa.me/212661311149" target="_blank" rel="noopener"><span class="ltr">06 61 31 11 49</span></a></div></li>
           <li><span class="ci"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span><div><span class="c-label" data-i18n="c.hours">Horaires d'ouverture</span><span class="c-value" data-i18n="c.hours.wk">Lundi au vendredi&nbsp;: 9&nbsp;h – 18&nbsp;h&nbsp;30</span><span class="c-value" data-i18n="c.hours.sat">Samedi&nbsp;: 9&nbsp;h – 13&nbsp;h</span><span class="c-value"><small data-i18n="c.hours.sun">Fermé le dimanche</small></span></div></li>
           <li><span class="ci"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></span><div><span class="c-label" data-i18n="c.mail">E-mail</span><a class="c-value" href="mailto:allinoneassurance@gmail.com"><span class="ltr">allinoneassurance@gmail.com</span></a></div></li>
@@ -855,6 +881,7 @@ a.c-value:hover{color:var(--blue)}
       'p.at':'Workplace accidents','p.at.d':'Mandatory cover for every employer, adjusted to your activity and headcount.',
       'p.transport':'Goods in transit','p.transport.d':'Your goods covered for import, export and on Moroccan roads.',
       'p.pro_autre':'Other business need','p.autre':'Other request',
+      'partners.title':'Our partners','partners.text':'We work with well-established insurance and assistance companies in Morocco.',
       'why.title':'An insurer sells you its own contracts. A broker chooses the right one for you.',
       'why.intro':'As a broker, we work for you, not for an insurance company. No more stressful paperwork! You can count on us to bring you the best products from several companies, at attractive rates and with quality customer service.',
       'w1.t':'We compare several insurers','w1.d':'You get negotiated cover and prices without going from agency to agency.',
@@ -945,6 +972,7 @@ a.c-value:hover{color:var(--blue)}
       'p.at':'حوادث الشغل','p.at.d':'التأمين الإجباري لكل مشغّل، ملائم لنشاطك وعدد أجرائك.',
       'p.transport':'نقل البضائع','p.transport.d':'تغطية بضائعك عند الاستيراد والتصدير وعلى طرق المغرب.',
       'p.pro_autre':'حاجة مهنية أخرى','p.autre':'طلب آخر',
+      'partners.title':'شركاؤنا','partners.text':'نتعامل مع شركات تأمين ومساعدة معروفة في المغرب.',
       'why.title':'شركة التأمين تبيعك عقودها. الوسيط يختار لك الأنسب.',
       'why.intro':'بصفتنا وسيطًا، نعمل لصالحك وليس لصالح شركة تأمين. وداعًا للإجراءات المرهقة! يمكنك الاعتماد علينا لنقدّم لك أفضل منتجات عدة شركات، بأسعار مغرية وخدمة زبناء ذات جودة.',
       'w1.t':'نقارن بين عدة شركات','w1.d':'تحصل على ضمانات وأسعار متفاوض عليها دون التنقل بين الوكالات.',
